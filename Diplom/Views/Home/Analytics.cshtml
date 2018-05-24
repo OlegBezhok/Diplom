@@ -1,0 +1,56 @@
+﻿@model Diplom.Models.AnalyticsModel
+@{
+    ViewBag.Title = "Analytics";
+}
+
+<h2>@User.Identity.Name</h2>
+                     <div>
+                         <dl class="dl-horizontal">
+                             @if (int.TryParse(@Model.AverageMarkEmp.ToString(), out int value))
+    {
+                         <dt>Результат сотрудника</dt>
+                         <dd>@Model.AverageMarkEmp</dd>
+                         <dt>Вывод</dt>
+                         <dd>@Model.ResultEmp</dd>
+}
+else
+{
+                         <dt>Результат сотрудника</dt>
+                         <dd>Тест не был пройден</dd>
+}
+                             @if (int.TryParse(@Model.AverageMarkMan.ToString(), out int value2))
+    {
+                         <dt>Результат менеджера по сотруднику</dt>
+                         <dd>@Model.AverageMarkMan</dd>
+                         <dt>Вывод</dt>
+                         <dd>@Model.ResultMan</dd>
+}
+else
+{
+                         <dt>Результат менеджера по сотруднику</dt>
+                         <dd>Тест не был пройден</dd>
+}
+                             @if (int.TryParse(@Model.AverageMarkHr.ToString(), out int value3))
+    {
+                         <dt>Результат HR по сотрудникуу</dt>
+                         <dd>@Model.AverageMarkHr</dd>
+                         <dt>Вывод</dt>
+                         <dd>@Model.ResultHr</dd>
+                         <dt>Комментарий</dt>
+                         <dd>@Model.Comment</dd>
+}
+else
+{
+                         <dt>Результат HR по сотруднику</dt>
+                         <dd>Тест не был пройден</dd>
+}
+                             
+                         </dl>
+                     </div>
+@using (Html.BeginForm("Answer", "Home"))
+    {
+<p>
+    <input type="submit" value="Выход" style="margin-top:10px" />
+</p>
+    }
+

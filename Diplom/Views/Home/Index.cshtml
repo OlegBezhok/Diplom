@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@model List<Diplom.Models.Answer>
+
+@using (Html.BeginForm("Index", "Home"))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+<div class="form-horizontal">
+    <br>
+    Оцени каждый вопрос по шкале от 1 до 5
+    <br>
+    <h4>
+    Где 1- совершенно не удовлетворен, 2 - не удовлетворен, 3 - скорее не удовлетворен, 
+    4 - в целом удовлетворен, 5 - вполне удовлетворен
+        </h4>
+    <hr />
+    @for (var i = 0; i < Model.Count; i++)
+    {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <br />
+        <b>@Model[i].Question.Text</b>
+        <div class="form-group">
+            @Html.HiddenFor(item => item[i].QuestionId, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.HiddenFor(item => item[i].EmplMail, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.HiddenFor(item => item[i].UserMail, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.HiddenFor(item => item[i].Id, htmlAttributes: new { @class = "control-label col-md-2" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(item => item[i].Mark, htmlAttributes: new { @class = "control-label col-md-2" })
+            1
+                @Html.RadioButtonFor(item => item[i].Mark, "1", new { htmlAttributes = new { @class = "form-control", pattern = @"\d [1-5]" } })
+            2
+                @Html.RadioButtonFor(item => item[i].Mark, "2", new { htmlAttributes = new { @class = "form-control", pattern = @"\d [1-5]" } })
+            3
+                @Html.RadioButtonFor(item => item[i].Mark, "3", new { htmlAttributes = new { @class = "form-control", pattern = @"\d [1-5]" } })
+            4            
+                @Html.RadioButtonFor(item => item[i].Mark,"4", new { htmlAttributes = new { @class = "form-control", pattern = @"\d [1-5]" } })
+            5
+                @Html.RadioButtonFor(item => item[i].Mark, "5", new { htmlAttributes = new { @class = "form-control", pattern = @"\d [1-5]" } })
+            
+        </div>
+        if (User.IsInRole("hr") && i == Model.Count - 1)
+        {
+            <div class="form-group">
+                @Html.LabelFor(item => item[i].Comment, htmlAttributes: new { @class = "control-label col-md-2 " })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(item => item[i].Comment, new { htmlAttributes = new { @class = "form-control", rows = "5" } })
+                </div>
+            </div>
+
+        }
+    }
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

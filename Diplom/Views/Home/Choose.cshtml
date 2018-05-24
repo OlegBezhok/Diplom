@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Choose";
+}
+@model List<Diplom.Models.User>
+
+
+<h3>Choose</h3>
+@using (Html.BeginForm("Choose", "Home"))
+{
+    <p>
+        <b>Выбрать сотрудника для опроса</b>
+        <br>
+        <select name="email1">
+
+            <option disabled>Выберите работника для опроса</option>
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <option required name="email1"  value="@Model[i].Email">@Model[i].Name</option>
+            }
+        </select>
+    </p>
+
+    <p><button name="button" value="question">Опрос</button></p>
+
+
+if (User.IsInRole("hr"))
+
+{
+        <p>
+            <b>Выбрать сотрудника для аналитики </b>
+            <br>
+            <select name="email2">
+                <option required disabled>Выберите сотрудника для аналитики</option>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <option required name="email2" value="@Model[i].Email">@Model[i].Name</option>
+                }
+                <option value="Все">Все</option>
+            </select>
+        </p>        
+        <p>
+            <b>Год:</b><br>
+            <input type="number" size="40" required name="year" value="2018">
+        </p>
+
+        <p><button name="button" value="analiz">Анализ</button></p>
+
+    }
+
+}
+
+@using (Html.BeginForm("LogOff", "Account"))
+{
+    <p>
+        <input type="submit" value="Выход" style="margin-top:10px" />
+    </p>
+}
+
+
+@section Scripts
+ {
+    @Scripts.Render("~/bundles/jqueryval")
+}

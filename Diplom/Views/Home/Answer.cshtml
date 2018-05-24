@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Answer";
+}
+
+<h2>Спасибо, что прошел наш опрос</h2>
+@if (!User.IsInRole("employee"))
+{
+    using (Html.BeginForm("Answer", "Home"))
+    {
+    <p>
+  <input type="submit" value="Выход" style="margin-top:10px" />
+        </p>
+    }
+}
+    @if (User.IsInRole("employee"))
+{
+    using (Html.BeginForm("LogOff", "Account"))
+    {
+        <p>
+            <input type="submit" value="Выход" style="margin-top:10px" />
+        </p>
+    }
+}
+
