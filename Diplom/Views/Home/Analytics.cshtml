@@ -8,7 +8,7 @@
                          <dl class="dl-horizontal">
                              @if (int.TryParse(@Model.AverageMarkEmp.ToString(), out int value))
     {
-                         <dt>Результат сотрудника</dt>
+                         <dt>Результат сотрудника/ов</dt>
                          <dd>@Model.AverageMarkEmp</dd>
                          <dt>Вывод</dt>
                          <dd>@Model.ResultEmp</dd>
@@ -20,14 +20,14 @@ else
 }
                              @if (int.TryParse(@Model.AverageMarkMan.ToString(), out int value2))
     {
-                         <dt>Результат менеджера по сотруднику</dt>
+                         <dt>Результат менеджера по сотруднику/ам</dt>
                          <dd>@Model.AverageMarkMan</dd>
                          <dt>Вывод</dt>
                          <dd>@Model.ResultMan</dd>
 }
 else
 {
-                         <dt>Результат менеджера по сотруднику</dt>
+                         <dt>Результат менеджера по сотруднику/ам</dt>
                          <dd>Тест не был пройден</dd>
 }
                              @if (int.TryParse(@Model.AverageMarkHr.ToString(), out int value3))
@@ -41,7 +41,7 @@ else
 }
 else
 {
-                         <dt>Результат HR по сотруднику</dt>
+                         <dt>Результат HR по сотруднику/ам</dt>
                          <dd>Тест не был пройден</dd>
 }
                              
