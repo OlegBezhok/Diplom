@@ -184,11 +184,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\Gradation.cs" />
-    <Compile Include="Migrations\201805242126451_MigrateDB.cs" />
-    <Compile Include="Migrations\201805242126451_MigrateDB.Designer.cs">
-      <DependentUpon>201805242126451_MigrateDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AnalyticsModel.cs" />
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\AppDbInitializer.cs" />
@@ -255,11 +250,6 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805242126451_MigrateDB.resx">
-      <DependentUpon>201805242126451_MigrateDB.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

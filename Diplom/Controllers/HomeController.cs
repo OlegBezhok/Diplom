@@ -94,7 +94,7 @@ namespace Diplom.Controllers
             User employee = db.Users.FirstOrDefault(x => x.Email == item_id);
             List<Answer> answers = new List<Answer>();
 
-            if (item_id != null)
+            if (item_id != "Все")
             {
                 answers.AddRange(db.Answers.Where(x => x.EmplMail == item_id && x.DateTime == year));
             }

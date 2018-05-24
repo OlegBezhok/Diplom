@@ -117,5 +117,3 @@ C:\Users\olegb\source\repos\Diplom\Diplom\obj\Debug\Lightpoint Loyalty.csproj.Co
 C:\Users\olegb\source\repos\Diplom\Diplom\obj\Debug\Lightpoint Loyalty.csproj.CopyComplete
 C:\Users\olegb\source\repos\Diplom\Diplom\obj\Debug\Diplom.dll
 C:\Users\olegb\source\repos\Diplom\Diplom\obj\Debug\Diplom.pdb
-C:\Users\olegb\source\repos\Diplom\Diplom\obj\Debug\Diplom.Migrations.MigrateDB.resources
-C:\Users\olegb\source\repos\Diplom\Diplom\obj\Debug\Lightpoint Loyalty.csproj.GenerateResource.cache
